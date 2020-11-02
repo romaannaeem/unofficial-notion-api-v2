@@ -1,11 +1,13 @@
 # Unofficial Notion.so API Wrapper (WIP)
 
-![npm](https://img.shields.io/npm/v/notion-api-js.svg)
-![npm bundle size](https://img.shields.io/bundlephobia/min/notion-api-js.svg)
+<!-- ![npm](https://img.shields.io/npm/v/notion-api-js.svg) -->
+<!-- ![npm bundle size](https://img.shields.io/bundlephobia/min/notion-api-js.svg) -->
 
 This repository contains an unofficial port of the [Notion](https://notion.so) API to Node.js. **Important**: It only works in the backend using Node.js and not in a client-side environment.
 
 **IMPORTANT**: You need a token to use the Notion API. You can obtain one by reading your local cookie. You can find instructions for that below.
+
+**DISCLAIMER**: The other [unofficial Notion API](https://github.com/cstrnt/notion-api) wasn't working for me, so I took the source code, made some tweaks, and got it working! I have also copied much of this documentation file from the original repository, so all credit goes to the original author.
 
 # Documentation
 
@@ -18,7 +20,9 @@ This repository contains an unofficial port of the [Notion](https://notion.so) A
 
 # Installation
 
-You can either use `npm ` or `yarn ` to install it:
+`npm ` package coming soon! You can download the source code and require it into your own code for now. Run `npm install ` before running. If you run into a `ts-node ` error, run `npm i -g ts-node ` to fix. Examples included at the bottom of `index.ts ` file.
+
+<!-- You can either use `npm ` or `yarn ` to install it:
 
 ```
 npm i --save notion-api-js
@@ -26,7 +30,7 @@ npm i --save notion-api-js
 
 ```
 yarn add notion-api-js
-```
+``` -->
 
 # Usage
 
@@ -34,15 +38,15 @@ yarn add notion-api-js
 
 To create an instance, simply pass an object with the token you read from the cookie:
 
+<!-- // ES Modules syntax -->
+<!-- import Notion from 'notion-api-js'; -->
+
+<!-- // require syntax -->
+<!-- const Notion = require('notion-api-js').default; -->
+
 ```js
-// ES Modules syntax
-import Notion from "notion-api-js";
-
-// require syntax
-const Notion = require("notion-api-js").default;
-
 const notion = new Notion({
-  token: "YOUR_TOKEN_V2"
+  token: 'YOUR_TOKEN_V2',
 });
 ```
 
@@ -126,7 +130,7 @@ Gets all pages of the user by the userId passed to the `Notion ` instance. All p
 **Example**
 
 ```js
-notion.getPages().then(pages => {
+notion.getPages().then((pages) => {
   // Your Code here
 });
 ```
@@ -144,7 +148,7 @@ Gets a Notion page by the pageId and returns the parsed HTML.
 **Example**
 
 ```js
-notion.getPageById("pageId").then(page => {
+notion.getPageById('pageId').then((page) => {
   // Your code here
 });
 ```
@@ -162,7 +166,7 @@ Gets a Notion page by the given pageId and all subpages of that page. Useful if 
 **Example**
 
 ```js
-notion.getPagesByIndexId("pageId").then(page => {
+notion.getPagesByIndexId('pageId').then((page) => {
   // Your code here
 });
 ```
@@ -172,11 +176,7 @@ notion.getPagesByIndexId("pageId").then(page => {
 Gets the HTML for all pages.
 
 ```js
-notion.getAllHTML().then(html => {
+notion.getAllHTML().then((html) => {
   // Your Ccode here
 });
 ```
-
-# Disclaimer
-
-It's really WIP right now but I would highly appreciate if you would like to contribute to the project. Just fork this repository and create a PR 😄

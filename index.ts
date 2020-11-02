@@ -1,8 +1,8 @@
-import Notion from './src/notion'
+import Notion from './src/notion';
 
 const options = {
-  token_v2: 'INSERT_TOKEN_HERE',
-}
+  token_v2: 'YOUR_NOTION_API_KEY',
+};
 
 const api = new Notion({
   token: options.token_v2,
@@ -14,11 +14,16 @@ const api = new Notion({
       purple: '#9933cc',
     },
   },
-})
+});
 
 // Use the api here
 
-;(async () => {
-  const p = await api.getAllHTML()
-  console.log(p[0])
-})()
+(async () => {
+  const pages = await api.getAllHTML();
+  console.log(pages[0]);
+})();
+
+(async () => {
+  const pageIds = await api.getPages();
+  console.log(pageIds);
+})();
