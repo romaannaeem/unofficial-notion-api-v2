@@ -5,6 +5,8 @@
 
 This repository contains an unofficial port of the [Notion](https://notion.so) API to Node.js. **Important**: It only works in the backend using Node.js and not in a client-side environment.
 
+**NO LONGER NEEDED**: Notion now offers a public API, so this is now obsolete. Check out the [new API!](https://developers.notion.com/docs)
+
 **IMPORTANT**: You need a token to use the Notion API. You can obtain one by reading your local cookie. You can find instructions for that below.
 
 **DISCLAIMER**: The other [unofficial Notion API](https://github.com/cstrnt/notion-api) wasn't working for me, so I took the source code, made some tweaks, and got it working! I have also copied much of this documentation file from the original repository, so all credit goes to the original author.
